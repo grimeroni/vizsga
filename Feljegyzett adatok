@@ -1,0 +1,19 @@
+Host gép hálózati IP címe: 192.168.0.124
+Virtuális Ubuntu 16.04 MAC címe: 08:00:27:0c:49:7a
+Virtuális Ubuntu 16.04 IP címe : 192.168.2.147
+
+Ansible verziószáma: 2.7.12
+
+
+
+Ezeket a parancsokat használtam(nem feltétlen sorrendbe):
+
+sudo apt-get update
+sudo apt-get install software-properties-common -y
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install ansible -y
+sudo apt-get install ssh -y
+git clone https://github.com/andreipak/wordpress-ansible.git
+cd wordpress-ansible 
+sudo ansible-playbook playbook.yml -i hosts -e mysql_root_password=123456
